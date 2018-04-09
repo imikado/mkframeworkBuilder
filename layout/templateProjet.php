@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Builder</title>
-<link rel="stylesheet" type="text/css" href="site/css/main.css" media="screen" />
-<script src="site/js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<script src="js/main.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -11,18 +11,18 @@
 <div class="main">
 	<div class="menu">
 		<p class="top">
-		<a <?php if(_root::getConfigVar('language.default')=='fr'):?>class="default"<?php endif;?> href="<?php echo _root::getLink('builder::lang',array('switch'=>'fr'))?>">FR</a> | 
+		<a <?php if(_root::getConfigVar('language.default')=='fr'):?>class="default"<?php endif;?> href="<?php echo _root::getLink('builder::lang',array('switch'=>'fr'))?>">FR</a> |
 		<a <?php if(_root::getConfigVar('language.default')=='en'):?>class="default"<?php endif;?> href="<?php echo _root::getLink('builder::lang',array('switch'=>'en'))?>">EN</a>
 		</p>
 		<?php echo $this->load('menu') ?>
 	</div>
 	<div class="content">
 		<?php echo $this->load('list') ?>
-		
+
 		<div class="smenu">
 		<?php echo $this->load('nav') ?>
 		</div>
-		
+
 		<?php echo $this->load('main') ?>
 	</div>
 </div>

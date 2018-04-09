@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Builder</title>
-<link rel="stylesheet" type="text/css" href="site/css/mainCode.css" media="screen" />
-<script src="site/js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/mainCode.css" media="screen" />
+<script src="js/main.js" type="text/javascript"></script>
 
 </head>
 <script>
@@ -12,13 +12,13 @@ function openclose(sId){
 	var b=getById('link'+sId);
 	if(a.style.display=='none'){
 		a.style.display='block';
-		
+
 		if(b){
 			b.className='diropen';
 		}
 	}else{
 		a.style.display='none';
-		
+
 		if(b){
 			b.className='dir';
 		}
@@ -28,10 +28,10 @@ function openDir(sId){
 	sId='arbo'+sId;
 	var a=getById(sId);
 	var b=getById('link'+sId);
-	
+
 	if(a){
 		a.style.display='block';
-		
+
 		if(b){
 			b.className='diropen';
 		}
@@ -47,16 +47,16 @@ function selectFile(sFile){
 	if(b){
 		b.style.backgroundColor='#b9d4d5';
 	}
-	
+
 	var tmpDir='';
 	var tDir=sFile.split('/');
 	var maxDir=tDir.length-1;
 	for(var i=3;i<maxDir;i++){
-		
+
 		openDir(tmpDir+tDir[i]);
 		tmpDir+=tDir[i]+"::";
 	}
-	
+
 }
 function openFile(sType,sFile){
 	var a=getById('codeFrame');

@@ -19,13 +19,18 @@
 
 class model_mkfbuilderprojet extends abstract_model {
 
-	private $sSource = 'data/sources/projet/';
-	private $sSourceEmpty = 'data/sources/projet_vide/';
-	private $sSourceScBootstrap = 'data/sources/projet_vide_sc_bootstrap/';
+	private $sSource =null;
+	private $sSourceEmpty = null;
+	private $sSourceScBootstrap = null;
 	private $sGenere = null;
 
 	public function __construct() {
 		$this->sGenere = _root::getConfigVar('path.generation');
+
+		$this->sSource= _root::getConfigVar('path.sources').'projet/';
+		$this->sSourceEmpty= _root::getConfigVar('path.sources').'projet_vide/';
+		$this->sSourceScBootstrap= _root::getConfigVar('path.sources').'projet_vide_sc_bootstrap/';
+
 	}
 
 	public static function getInstance() {

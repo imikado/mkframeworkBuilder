@@ -16,21 +16,23 @@ along with Mkframework.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 class model_mkfbuilderprojet extends abstract_model{
-	
-	private $sSource='data/sources/projet/';
+
+	private $sSource=null;
 	private $sGenere=null;
-	
+
 	public function __construct(){
 		$this->sGenere=_root::getConfigVar('path.generation');
+
+		$this->sSource=_root::getConfigVar('path.sources').'projet/';
 	}
 
 	public static function getInstance(){
 		return self::_getInstance(__CLASS__);
 	}
-	
+
 	public function create($sProjet){
 		self::copyFromTo($this->sSource,$this->sGenere.$sProjet);
-	
+
 	}
 	public function findAll(){
 		$oDir=new _dir($this->sGenere);
@@ -45,7 +47,7 @@ class model_mkfbuilderprojet extends abstract_model{
 			$oDir=new _dir($sFrom);
 			mkdir($sTo);
 			chmod($sTo,0777);
-			
+
 			foreach($oDir->getList() as $oFile){
 				self::copyFromTo($oFile->getAdresse(),$sTo.'/'.$oFile->getName());
 			}
@@ -54,6 +56,6 @@ class model_mkfbuilderprojet extends abstract_model{
 			chmod($sTo,0777);
 		}
 	}
-	
+
 }
 ?>

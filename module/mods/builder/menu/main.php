@@ -9,11 +9,11 @@ class module_mods_builder_menu extends abstract_moduleBuilder {
 
 		$sTypeApp = null;
 
-		$tIni = parse_ini_file('data/genere/' . _root::getParam('id') . '/conf/site.ini.php', true);
+		$tIni = parse_ini_file(_root::getConfigVar('path.generation') . _root::getParam('id') . '/conf/site.ini.php', true);
 		if (isset($tIni['template']) and isset($tIni['template']['type'])) {
 			$sTypeApp = $tIni['template']['type'];
 			$tType = array($sTypeApp);
-		} else if (file_exists('data/genere/' . _root::getParam('id') . '/layout/bootstrap.php')) {
+		} else if (file_exists(_root::getConfigVar('path.generation') . _root::getParam('id') . '/layout/bootstrap.php')) {
 			$sTypeApp = 'bootstrap';
 			$tType = array('all', $sTypeApp);
 		} else {

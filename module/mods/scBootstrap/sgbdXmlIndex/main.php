@@ -81,7 +81,7 @@ class module_mods_scBootstrap_sgbdXmlIndex extends abstract_moduleBuilder {
 
 		if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'xml') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -90,7 +90,7 @@ class module_mods_scBootstrap_sgbdXmlIndex extends abstract_moduleBuilder {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'csv') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {

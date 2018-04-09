@@ -16,32 +16,32 @@ along with Mkframework.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 Class module_menu extends abstract_module{
-	
+
 	public function __construct(){
 		plugin_i18n::start();
 	}
-	
+
 	public function _index(){
-		
+
 		$tLink=array(
 			tr('menuTop_createProject') => 'builder::new',
 			tr('menuTop_editProjects') => 'builder::list',
 
 			tr('menuTop_marketBuilder') => 'builder::marketBuilder',
-			
+
 		);
-		
+
 		$oTpl=new _tpl('menu::index');
 		$oTpl->tLink=$tLink;
-		
+
 		return $oTpl;
 	}
 	public function _export(){
 		$oTpl=new _tpl('menu::export');
-		
+
 		return $oTpl;
 	}
-	
+
 	public function _projetEmbedded(){
 		/*
 		if(_root::getParam('action')=='model'){
@@ -52,13 +52,13 @@ Class module_menu extends abstract_module{
 			$tLink=array(
 				'Modules' => 'title',
 				'Cr&eacute;er un module' => 'module',
-				
+
 				'Cr&eacute;er un module CRUD' => 'crud',
 				'Cr&eacute;er un module Lecture seule' => 'crudreadonly',
-				
+
 				'Cr&eacute;er un module d\'authentification' => 'authmodule',
 				'Cr&eacute;er un module d\'authentification avec inscription' => 'authwithinscriptionmodule',
-			
+
 			'Modules int&eacute;grable' => 'title',
 				'Cr&eacute;er un module menu ' => 'addmodulemenu',
 				'Cr&eacute;er un module int&eacute;grable' => 'moduleembedded',
@@ -68,16 +68,16 @@ Class module_menu extends abstract_module{
 		}*/
 
 		$bBootstrap=0;
-		if(file_exists('data/genere/'._root::getParam('id').'/layout/bootstrap.php')){
+		if(file_exists(_root::getConfigVar('path.generation')._root::getParam('id').'/layout/bootstrap.php')){
 			$bBootstrap=1;
 		}
-		
+
 		if($bBootstrap){
 			$tType=array('all','bootstrap');
-			
+
 		}else{
 			$tType=array('all','normal');
-			
+
 		}
 
 			$sLang=_root::getConfigVar('language.default');
@@ -85,7 +85,7 @@ Class module_menu extends abstract_module{
 
 			foreach($tType as $sType){
 				$sPathModule=_root::getConfigVar('path.module').'/mods/'.$sType;
-				
+
 				$tModulesAll=scandir($sPathModule);
 				foreach($tModulesAll as $sModule){
 					if(file_exists($sPathModule.'/'.$sModule.'/info.ini')){
@@ -99,10 +99,10 @@ Class module_menu extends abstract_module{
 					}
 				}
 			}
-			
+
 
 			//$tModules=scandir(_root::getConfigVar('path.module')).'/mods/normal';
-			
+
 			$tTitle=array(
 				//'coucheModel',
 				'modules',
@@ -117,7 +117,7 @@ Class module_menu extends abstract_module{
 
 					$tLinkModuleCat=$tLinkModule[$sTitle];
 					asort($tLinkModuleCat);
-				
+
 					$tLink[ tr('menu_'.$sTitle) ]='title';
 
 					foreach($tLinkModuleCat as $sLabel => $sLink){
@@ -126,13 +126,13 @@ Class module_menu extends abstract_module{
 				}
 			}
 
-		
+
 		$oTpl=new _tpl('menu::projetEmbedded');
 		$oTpl->tLink=$tLink;
-		
+
 		return $oTpl;
 	}
-	
+
 	private function getListDir($oRootDir){
 		$toDir=$oRootDir->getListDir();
 		$tDir=array();
@@ -152,19 +152,19 @@ Class module_menu extends abstract_module{
 		asort($tFile);
 		return $tFile;
 	}
-	
+
 	public function codeArbo($sProject){
-		
-		$oDir=new _dir('data/genere/'.$sProject);
+
+		$oDir=new _dir(_root::getConfigVar('path.generation').$sProject);
 		$tDir=$oDir->getListDir();
-		
+
 		$tFileAndDir=array();
 		foreach($tDir as $oDir){
 			$tFileDir[$oDir->getName()]['dir']=$this->getListDir($oDir);
 			$tFileDir[$oDir->getName()]['file']=$this->getListFile($oDir);
-			
+
 		}
-		
+
 		ksort($tFileDir);
 		$oView=new _view('menu::codearbo');
 		$oView->tDir=$tDir;

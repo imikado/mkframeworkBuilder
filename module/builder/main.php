@@ -77,7 +77,7 @@ class module_builder extends abstract_module {
 				model_mkfbuilderprojet::getInstance()->createEmpty($sProject);
 
 				//copy bootstrap
-				model_mkfbuilderprojet::getInstance()->copyFromTo('data/sources/fichiers/layout/bootstrap.php', _root::getConfigVar('path.generation') . $sProject . '/layout/bootstrap.php');
+				model_mkfbuilderprojet::getInstance()->copyFromTo(_root::getConfigVar('path.sources').'fichiers/layout/bootstrap.php', _root::getConfigVar('path.generation') . $sProject . '/layout/bootstrap.php');
 
 				//update title
 				self::getTools()->updateFile(_root::getParam('projet'), array('examplesite' => $sProject), 'layout/bootstrap.php');

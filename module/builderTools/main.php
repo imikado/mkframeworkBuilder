@@ -6,7 +6,7 @@ class module_builderTools {
 
 		if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'xml') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -15,7 +15,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'csv') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation'). _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -24,7 +24,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'json') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -42,7 +42,7 @@ class module_builderTools {
 
 		if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'xml') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -51,7 +51,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'csv') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -60,7 +60,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'json') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -79,7 +79,7 @@ class module_builderTools {
 
 		if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'xml') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -88,7 +88,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'csv') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -97,7 +97,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'json') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -126,7 +126,7 @@ class module_builderTools {
 
 		if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'xml') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -135,7 +135,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'csv') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -144,7 +144,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'json') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -165,7 +165,7 @@ class module_builderTools {
 
 		if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'xml') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -174,7 +174,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'csv') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {
@@ -183,7 +183,7 @@ class module_builderTools {
 			}
 		} else if (_root::getConfigVar('db.' . $sConfig . '.sgbd') == 'json') {
 			if (!file_exists(_root::getConfigVar('db.' . $sConfig . '.database'))) {
-				$sBuilderDbPath = _root::getConfigVar('path.data') . 'genere/' . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
+				$sBuilderDbPath = _root::getConfigVar('path.generation') . _root::getParam('id') . '/public/' . _root::getConfigVar('db.' . $sConfig . '.database');
 				if (file_exists($sBuilderDbPath)) {
 					_root::setConfigVar('db.' . $sConfig . '.database', $sBuilderDbPath);
 				} else {

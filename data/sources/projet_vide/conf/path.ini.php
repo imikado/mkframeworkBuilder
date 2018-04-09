@@ -1,5 +1,5 @@
 [path]
-lib=../../../../lib/framework/
+lib=../../../Lib/mkframeworkLib/
 
 data=../data/
 upload=../data/upload/

@@ -1,8 +1,8 @@
-<?php $src=null; 
+<?php $src=null;
 	if(_root::getParam('file')!=''){
 		$src=_root::getLink('code::editcode',array(
 											'project'=>_root::getParam('project'),
-											'file'=>'data/genere/'._root::getParam('project').'/'._root::getParam('file')
+											'file'=>_root::getConfigVar('path.generation')._root::getParam('project').'/'._root::getParam('file')
 											)
 							);
 	}
